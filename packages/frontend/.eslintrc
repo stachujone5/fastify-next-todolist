@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "project": "packages/frontend/tsconfig.json"
+  },
+  "extends": ["plugin:react-hooks/recommended", "next/core-web-vitals", "next"],
+  "rules": {
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/no-unescaped-entities": "off"
+  }
+}

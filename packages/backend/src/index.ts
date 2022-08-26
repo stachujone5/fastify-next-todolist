@@ -1,8 +1,10 @@
-import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
+import Fastify from 'fastify';
+
+import type { FastifyInstance } from 'fastify';
 
 const server: FastifyInstance = Fastify({});
 
-server.get('/', async (request, reply) => {
+server.get('/api', () => {
   return { message: 'Hello from API!' };
 });
 
@@ -14,4 +16,5 @@ const start = async () => {
     process.exit(1);
   }
 };
-start();
+
+void start();
