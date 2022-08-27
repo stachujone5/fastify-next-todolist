@@ -4,7 +4,7 @@ const Home = () => {
   const [data, setData] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api')
+    fetch('http://localhost:5432')
       .then(res => res.json())
       .then((data: { readonly message: string }) => setData(data.message))
       .catch(err => console.log(err));

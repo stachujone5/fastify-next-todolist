@@ -1,20 +1,22 @@
+import cors from '@fastify/cors';
 import Fastify from 'fastify';
 
-import type { FastifyInstance } from 'fastify';
+const fastify = Fastify({
+  logger: true
+});
 
-const server: FastifyInstance = Fastify({});
+void fastify.register(cors);
 
-server.get('/api', () => {
-  return { message: 'Hello from API!' };
+fastify.get('/', () => {
+  return { message: 'Hello from fastify!' };
 });
 
 const start = async () => {
   try {
-    await server.listen({ port: 5000 });
+    await fastify.listen({ port: 5432 });
   } catch (err) {
-    server.log.error(err);
+    fastify.log.error(err);
     process.exit(1);
   }
 };
-
 void start();

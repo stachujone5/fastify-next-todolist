@@ -10,7 +10,6 @@
         "component": true,
         "html": true
       }
-    ],
-    "react/no-unescaped-entities": "off"
+    ]
   }
 }
