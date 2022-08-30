@@ -12,11 +12,22 @@ export const HomePageContent = () => {
       .catch(err => console.log(err))
   }, [])
 
+  const players = ['gracz1', 'gracz2']
+
   return (
     <div className='card bg-base-100 shadow-xl'>
       <div className='card-body'>
-        <h2 className='card-title'>Card title!</h2>
-        <input type='text' placeholder='Enter to-do name' className='input input-bordered w-full' />
+        <h2 className='card-title'>League stats tracker</h2>
+        <div className='dropdown'>
+          <input type='text' placeholder='Enter player name' className='input input-bordered w-full dropdown' />
+          <ul tabIndex={0} className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'>
+            {players.map(p => (
+              <li key={p}>
+                <a>{p}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
         <p>If a dog chews shoes whose shoes does he choose?</p>
         <p>Data from api: {data}</p>
         <Stats />
