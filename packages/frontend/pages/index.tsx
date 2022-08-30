@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
+import { HomePageContent } from '../components/page-contents/HomePageContent'
 
 const Home = () => {
-  const [data, setData] = useState<string | null>(null);
+  return <HomePageContent />
+}
 
-  useEffect(() => {
-    fetch('http://localhost:5432')
-      .then(res => res.json())
-      .then((data: { readonly message: string }) => setData(data.message))
-      .catch(err => console.log(err));
-  }, []);
-
-  return <div style={{ textAlign: 'center' }}>{data || 'No data'}</div>;
-};
-
-export default Home;
+export default Home

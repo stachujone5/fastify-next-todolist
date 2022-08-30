@@ -1,5 +1,5 @@
 {
-  "name": "fullstack-todo-list",
+  "name": "league-stats-tracker",
   "private": true,
   "workspaces": [
     "packages/frontend",
