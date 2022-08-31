@@ -9,7 +9,4 @@ body {
     Helvetica Neue, sans-serif;
   background-color: #0f1729;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

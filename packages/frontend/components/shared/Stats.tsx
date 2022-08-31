@@ -1,4 +1,6 @@
-export const Stats = () => {
+import type { PlayerFull } from '../page-contents/HomePageContent'
+
+export const Stats = ({ leaguePoints, losses, rank, tier, wins }: PlayerFull) => {
   return (
     <div className='stats shadow'>
       <div className='stat'>
@@ -17,8 +19,10 @@ export const Stats = () => {
             />
           </svg>
         </div>
-        <div className='stat-title'>Total kills</div>
-        <div className='stat-value text-primary'>25.6K</div>
+        <div className='stat-title'>Rank</div>
+        <div className='stat-value text-primary'>
+          {tier} {rank} {leaguePoints}lp
+        </div>
         <div className='stat-desc'>21% more than last month</div>
       </div>
 
@@ -33,8 +37,8 @@ export const Stats = () => {
             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M13 10V3L4 14h7v7l9-11h-7z' />
           </svg>
         </div>
-        <div className='stat-title'>Page assists</div>
-        <div className='stat-value text-secondary'>2.7k</div>
+        <div className='stat-title'>Wins</div>
+        <div className='stat-value text-secondary'>{wins}</div>
         <div className='stat-desc'>15% less than last month</div>
       </div>
 
@@ -46,8 +50,8 @@ export const Stats = () => {
             </div>
           </div>
         </div>
-        <div className='stat-title'>Kill participation</div>
-        <div className='stat-value'>86%</div>
+        <div className='stat-title'>Losses</div>
+        <div className='stat-value'>{losses}</div>
         <div className='stat-desc text-secondary'>More than 93% players</div>
       </div>
     </div>
